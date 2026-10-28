@@ -1,1 +1,1035 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Jocelyn Patubo — Creative thinking. Strategic impact. Portfolio Marketing, Design e Comunicazione Digitale.">
+<meta name="theme-color" content="#f5f5f7">
+<title>Jocelyn Patubo — Portfolio</title>
 
+<!-- Google Fonts: Inter -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+<!-- GSAP & Plugins -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+<style>
+:root {
+  --apple-bg: #f5f5f7;
+  --apple-surface: #ffffff;
+  --apple-text: #1d1d1f;
+  --apple-muted: #86868b;
+  --apple-border: rgba(0, 0, 0, 0.08);
+  --apple-blue: #0071e3;
+  --apple-blue-hover: #0077ed;
+  --apple-dark: #111111;
+
+  --r-sm: 14px;
+  --r-md: 22px;
+  --r-lg: 28px;
+  --r-full: 9999px;
+  
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.08);
+
+  --ease-apple: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  margin: 0;
+  background-color: var(--apple-bg);
+  color: var(--apple-text);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: none; outline: none; background: none; }
+::selection { background: rgba(0, 113, 227, 0.18); color: var(--apple-blue); }
+
+.wrap { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+
+/* -------------------------------------------------------------
+   1. HEADER: APPLE FROSTED GLASS NAV
+------------------------------------------------------------- */
+.header-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(245, 245, 247, 0.75);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--apple-border);
+  transition: all 0.3s var(--ease-apple);
+}
+
+.nav-inner {
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: -0.02em;
+  color: var(--apple-text);
+}
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--r-full);
+  background: var(--apple-text);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.nav-link {
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: rgba(29, 29, 31, 0.7);
+  transition: color 0.2s ease;
+}
+.nav-link:hover, .nav-link.active {
+  color: var(--apple-text);
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 7px 16px;
+  border-radius: var(--r-full);
+  background: var(--apple-blue);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.nav-cta:hover {
+  background: var(--apple-blue-hover);
+  transform: scale(1.02);
+}
+
+/* -------------------------------------------------------------
+   2. HERO SECTION
+------------------------------------------------------------- */
+.hero {
+  padding: 160px 0 90px;
+  text-align: center;
+}
+.hero-container {
+  max-width: 840px;
+  margin: 0 auto;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--apple-border);
+  border-radius: var(--r-full);
+  color: var(--apple-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin-bottom: 28px;
+  backdrop-filter: blur(10px);
+}
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34c759;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 6.5vw, 4.8rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.04;
+  margin: 0 0 16px;
+  color: var(--apple-text);
+}
+.hero .tagline {
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  font-weight: 600;
+  color: var(--apple-muted);
+  margin: 0 0 24px;
+  letter-spacing: -0.02em;
+}
+.hero-desc {
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  color: rgba(29, 29, 31, 0.8);
+  line-height: 1.5;
+  margin: 0 auto 38px;
+  max-width: 660px;
+  font-weight: 400;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.btn-apple {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 46px;
+  padding: 0 24px;
+  border-radius: var(--r-full);
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: all 0.25s var(--ease-apple);
+}
+.btn-apple-primary {
+  background: var(--apple-blue);
+  color: white;
+}
+.btn-apple-primary:hover {
+  background: var(--apple-blue-hover);
+  transform: scale(1.02);
+}
+.btn-apple-secondary {
+  background: var(--apple-surface);
+  color: var(--apple-blue);
+  border: 1px solid var(--apple-border);
+}
+.btn-apple-secondary:hover {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
+}
+
+/* -------------------------------------------------------------
+   SECTIONS COMMON
+------------------------------------------------------------- */
+section { padding: 90px 0; }
+.section-head { margin-bottom: 44px; }
+.section-kicker {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--apple-muted);
+  margin-bottom: 8px;
+}
+.section-title {
+  font-size: clamp(2.1rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* -------------------------------------------------------------
+   3. CHI SONO (APPLE BENTO GRID)
+------------------------------------------------------------- */
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr;
+  gap: 20px;
+}
+.bento-card {
+  background: var(--apple-surface);
+  border: 1px solid var(--apple-border);
+  border-radius: var(--r-lg);
+  padding: 44px;
+  box-shadow: var(--shadow-subtle);
+  transition: transform 0.4s var(--ease-apple), box-shadow 0.4s var(--ease-apple);
+}
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+.bento-main p.lead {
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--apple-text);
+  margin: 0 0 20px;
+  letter-spacing: -0.015em;
+}
+.bento-main p.body-text {
+  font-size: 1.05rem;
+  color: var(--apple-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.bento-features {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+}
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-sm);
+  background: var(--apple-bg);
+  color: var(--apple-text);
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.feature-text h4 { margin: 0 0 3px; font-size: 1rem; font-weight: 600; }
+.feature-text p { margin: 0; font-size: 0.88rem; color: var(--apple-muted); }
+
+/* -------------------------------------------------------------
+   4. PROGETTI (APPLE-STYLE CARDS)
+------------------------------------------------------------- */
+.progetti-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.progetto-card {
+  background: var(--apple-surface);
+  border: 1px solid var(--apple-border);
+  border-radius: var(--r-lg);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-subtle);
+  transition: all 0.4s var(--ease-apple);
+}
+.progetto-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: var(--shadow-hover);
+}
+.progetto-tag {
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--apple-muted);
+  margin-bottom: 24px;
+}
+.progetto-card h3 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+}
+.progetto-card p {
+  font-size: 0.95rem;
+  color: var(--apple-muted);
+  line-height: 1.5;
+  margin: 0 0 36px;
+}
+.progetto-cta {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--apple-blue);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap 0.2s ease;
+}
+.progetto-card:hover .progetto-cta { gap: 8px; }
+
+/* -------------------------------------------------------------
+   5. I MIEI LAVORI — SIDE-BY-SIDE GLASS WATER CARDS
+------------------------------------------------------------- */
+.work-grid-horizontal {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  perspective: 1000px;
+}
+
+/* Glass Water Effect Card Style */
+.glass-water-card {
+  position: relative;
+  isolation: isolate;
+  height: 260px;
+  border-radius: var(--r-lg);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  
+  /* Frosted Liquid Glass Surface */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.72) 0%,
+    rgba(255, 255, 255, 0.35) 60%,
+    rgba(240, 245, 255, 0.5) 100%
+  );
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+
+  /* Liquid Border & Refraction */
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  outline: 1px solid rgba(255, 255, 255, 0.4);
+  
+  /* Soft Liquid Drop Shadows */
+  box-shadow: 
+    0 12px 32px -8px rgba(0, 71, 140, 0.08),
+    0 2px 6px rgba(0, 0, 0, 0.03),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -10px 20px -10px rgba(0, 113, 227, 0.05);
+
+  transform-style: preserve-3d;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+/* Water Ripple Highlight Glow Effect */
+.glass-water-card::before {
+  content: "";
+  position: absolute;
+  top: -60%;
+  left: -60%;
+  width: 220%;
+  height: 220%;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(184, 227, 255, 0.25) 30%,
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glass-water-card:hover::before {
+  opacity: 1;
+}
+
+.glass-water-card:hover {
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow: 
+    0 22px 48px -12px rgba(0, 113, 227, 0.18),
+    0 4px 14px rgba(0, 0, 0, 0.04),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 1),
+    inset 0 -12px 24px -10px rgba(0, 113, 227, 0.12);
+}
+
+.glass-card-top {
+  position: relative;
+  z-index: 2;
+}
+
+.glass-card-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--apple-blue);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.glass-water-card h3 {
+  font-size: 1.35rem;
+  font-weight: 750;
+  letter-spacing: -0.025em;
+  color: var(--apple-text);
+  margin: 0 0 8px;
+  line-height: 1.15;
+}
+
+.glass-water-card p {
+  font-size: 0.86rem;
+  color: rgba(29, 29, 31, 0.72);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.glass-card-bottom {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.glass-card-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--apple-blue);
+  display: grid;
+  place-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.glass-water-card:hover .glass-card-arrow {
+  transform: translateX(3px) scale(1.08);
+  background: var(--apple-blue);
+  color: white;
+}
+
+.work-bottom-bar {
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* -------------------------------------------------------------
+   6. CONTATTI (CLEAN APPLE CARD)
+------------------------------------------------------------- */
+.contact-card {
+  background: var(--apple-dark);
+  color: white;
+  border-radius: var(--r-lg);
+  padding: clamp(40px, 6vw, 70px);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+.contact-copy h2 {
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0 0 16px;
+  color: white;
+}
+.contact-copy p {
+  font-size: 1.1rem;
+  color: #86868b;
+  line-height: 1.5;
+  margin: 0 0 32px;
+}
+
+.contact-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.contact-link-tile {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--r-md);
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  transition: all 0.25s ease;
+}
+.contact-link-tile:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.02);
+}
+.contact-link-tile span { font-size: 0.8rem; color: #86868b; display: block; margin-bottom: 2px; }
+.contact-link-tile strong { font-size: 0.95rem; font-weight: 600; }
+
+/* WhatsApp Specific Styling & Floating Glass Bubble */
+.whatsapp-tile {
+  background: rgba(37, 211, 102, 0.12) !important;
+  border-color: rgba(37, 211, 102, 0.3) !important;
+}
+.whatsapp-tile:hover {
+  background: rgba(37, 211, 102, 0.22) !important;
+  border-color: rgba(37, 211, 102, 0.5) !important;
+}
+.whatsapp-tile strong {
+  color: #25d366;
+}
+
+.whatsapp-float-bubble {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: var(--r-full);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(37, 211, 102, 0.15);
+  color: var(--apple-text);
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.3s var(--ease-apple);
+  text-decoration: none;
+}
+.whatsapp-float-bubble:hover {
+  transform: translateY(-4px) scale(1.04);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #25d366;
+  box-shadow: 0 16px 36px rgba(37, 211, 102, 0.25);
+}
+.whatsapp-icon-badge {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #25d366;
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* -------------------------------------------------------------
+   7. FOOTER
+------------------------------------------------------------- */
+.jp-footer {
+  padding: 40px 0 50px;
+  border-top: 1px solid var(--apple-border);
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer-brand h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 2px;
+}
+.footer-brand p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--apple-muted);
+}
+.footer-copy {
+  font-size: 0.82rem;
+  color: var(--apple-muted);
+}
+
+/* RESPONSIVE LAYOUT */
+@media (max-width: 1024px) {
+  .work-grid-horizontal {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .bento-grid { grid-template-columns: 1fr; }
+  .progetti-grid { grid-template-columns: 1fr; }
+  .contact-card { grid-template-columns: 1fr; gap: 32px; padding: 36px 24px; }
+}
+
+@media (max-width: 640px) {
+  .nav-links { display: none; }
+  .hero { padding-top: 120px; }
+  .work-grid-horizontal {
+    grid-template-columns: 1fr;
+  }
+  .glass-water-card {
+    height: auto;
+    min-height: 210px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- 1. FROSTED GLASS HEADER -->
+<div class="header-wrapper">
+  <div class="wrap">
+    <header class="nav-inner">
+      <a href="#home" class="brand-logo">
+        <span class="brand-mark">JP</span>
+        <span>Jocelyn Patubo</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#chi-sono" class="nav-link">Chi Sono</a>
+        <a href="#progetti" class="nav-link">Progetti</a>
+        <a href="#i-miei-lavori" class="nav-link">I miei lavori</a>
+        <a href="#contatti" class="nav-link">Contatti</a>
+      </nav>
+
+      <a href="cv-jocelyn-patubo.pdf" download class="nav-cta">
+        Scarica il mio CV ↗
+      </a>
+    </header>
+  </div>
+</div>
+
+<main>
+  <!-- 2. HERO -->
+  <section class="hero" id="home">
+    <div class="wrap hero-container">
+      <div class="hero-badge gsap-fade">
+        <span class="badge-dot"></span>
+        <span>Disponibile per nuove opportunità professionali, collaborazioni e progetti creativi.</span>
+      </div>
+
+      <h1 class="gsap-fade">HELLO, I'M JOCELYN PATUBO.</h1>
+      <div class="tagline gsap-fade">Creative thinking. Strategic impact.</div>
+      <p class="hero-desc gsap-fade">Integro creatività, marketing e comunicazione digitale per dare forma alle idee, costruire identità riconoscibili e sviluppare progetti concreti.</p>
+
+      <div class="hero-actions gsap-fade">
+        <a href="#progetti" class="btn-apple btn-apple-primary">Explore my work ↗</a>
+        <a href="#contatti" class="btn-apple btn-apple-secondary">Let's connect ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. CHI SONO -->
+  <section id="chi-sono">
+    <div class="wrap">
+      <div class="section-head gsap-fade">
+        <div class="section-kicker">CHI SONO</div>
+        <h2 class="section-title">Creatività con una direzione.</h2>
+      </div>
+
+      <div class="bento-grid">
+        <div class="bento-card bento-main gsap-fade">
+          <p class="lead">Unisco visione creativa, competenze digitali e approccio strategico per trasformare idee in progetti concreti.</p>
+          <p class="body-text">Mi occupo di marketing, branding, comunicazione digitale e design, dalla creazione dei contenuti allo sviluppo delle attività di comunicazione. Mi occupo anche di attività legate al deposito e alla registrazione dei marchi.</p>
+        </div>
+
+        <div class="bento-card bento-features gsap-fade">
+          <div class="feature-item">
+            <div class="feature-icon">✦</div>
+            <div class="feature-text">
+              <h4>Branding &amp; Visual Identity</h4>
+              <p>Identità visive e materiali coordinati.</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">↗</div>
+            <div class="feature-text">
+              <h4>Digital Strategy</h4>
+              <p>Campagne e contenuti orientati a obiettivi.</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">🛡</div>
+            <div class="feature-text">
+              <h4>Registrazione Marchi</h4>
+              <p>Tutela e deposito del brand.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. PROGETTI -->
+  <section id="progetti">
+    <div class="wrap">
+      <div class="section-head gsap-fade">
+        <div class="section-kicker">PROGETTI</div>
+        <h2 class="section-title">Creatività applicata. Risultati concreti.</h2>
+      </div>
+
+      <div class="progetti-grid">
+        <article class="progetto-card gsap-fade">
+          <div>
+            <div class="progetto-tag">01 / BRANDING</div>
+            <h3>Branding &amp; Visual Identity</h3>
+            <p>Identità visive e materiali coordinati per costruire brand riconoscibili.</p>
+          </div>
+          <a href="#contatti" class="progetto-cta">Scopri il progetto ↗</a>
+        </article>
+
+        <article class="progetto-card gsap-fade">
+          <div>
+            <div class="progetto-tag">02 / MARKETING</div>
+            <h3>Marketing &amp; Campaigns</h3>
+            <p>Campagne e attività digitali orientate a obiettivi concreti.</p>
+          </div>
+          <a href="#contatti" class="progetto-cta">Esplora il progetto ↗</a>
+        </article>
+
+        <article class="progetto-card gsap-fade">
+          <div>
+            <div class="progetto-tag">03 / CONTENT</div>
+            <h3>Social Media &amp; Content</h3>
+            <p>Contenuti, video e storytelling per comunicare con personalità.</p>
+          </div>
+          <a href="#contatti" class="progetto-cta">Guarda il progetto ↗</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. I MIEI LAVORI (SIDE-BY-SIDE GLASS WATER CARDS) -->
+  <section id="i-miei-lavori">
+    <div class="wrap">
+      <div class="section-head gsap-fade">
+        <div class="section-kicker">I MIEI LAVORI</div>
+        <h2 class="section-title">Esperienze che prendono forma.</h2>
+        <p style="color: var(--apple-muted); margin-top: 8px; font-size: 1.05rem;">Una selezione di realtà e progetti a cui ho contribuito attraverso marketing, design e comunicazione.</p>
+      </div>
+
+      <div class="work-grid-horizontal">
+        <!-- Card 1 -->
+        <article class="glass-water-card gsap-fade">
+          <div class="glass-card-top">
+            <div class="glass-card-tag">PROGETTO 01</div>
+            <h3>MYGLADIX</h3>
+            <p>Brand identity · Marketing · Comunicazione</p>
+          </div>
+          <div class="glass-card-bottom">
+            <span style="font-size: 0.78rem; font-weight: 600; color: var(--apple-muted);">Scopri</span>
+            <div class="glass-card-arrow">↗</div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="glass-water-card gsap-fade">
+          <div class="glass-card-top">
+            <div class="glass-card-tag">PROGETTO 02</div>
+            <h3>MYCHANCE</h3>
+            <p>Music marketing · Social media · Artist communication</p>
+          </div>
+          <div class="glass-card-bottom">
+            <span style="font-size: 0.78rem; font-weight: 600; color: var(--apple-muted);">Scopri</span>
+            <div class="glass-card-arrow">↗</div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="glass-water-card gsap-fade">
+          <div class="glass-card-top">
+            <div class="glass-card-tag">PROGETTO 03</div>
+            <h3>HÈMERA</h3>
+            <p>Brand identity · Visual design</p>
+          </div>
+          <div class="glass-card-bottom">
+            <span style="font-size: 0.78rem; font-weight: 600; color: var(--apple-muted);">Scopri</span>
+            <div class="glass-card-arrow">↗</div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="glass-water-card gsap-fade">
+          <div class="glass-card-top">
+            <div class="glass-card-tag">PROGETTO 04</div>
+            <h3>PRIMO PROMO</h3>
+            <p>Graphic design · Social media · Marketing</p>
+          </div>
+          <div class="glass-card-bottom">
+            <span style="font-size: 0.78rem; font-weight: 600; color: var(--apple-muted);">Scopri</span>
+            <div class="glass-card-arrow">↗</div>
+          </div>
+        </article>
+      </div>
+
+      <div class="work-bottom-bar gsap-fade">
+        <a href="#contatti" class="btn-apple btn-apple-secondary">Scopri gli altri lavori ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CONTATTI -->
+  <section id="contatti">
+    <div class="wrap">
+      <div class="contact-card gsap-fade">
+        <div class="contact-copy">
+          <h2>Let's make something meaningful.</h2>
+          <p>Hai un progetto in mente o un'opportunità da condividere? Parliamone e troviamo il modo di darle forma.</p>
+          <a href="mailto:jocelynconcordiapatubo01@gmail.com" class="btn-apple btn-apple-primary">Let's connect ↗</a>
+        </div>
+
+        <div class="contact-links-list">
+          <a href="https://wa.me/393000000000" target="_blank" rel="noopener noreferrer" class="contact-link-tile whatsapp-tile">
+            <div>
+              <span>WhatsApp Diretto</span>
+              <strong>Chatta su WhatsApp</strong>
+            </div>
+            <div style="color: #25d366; font-weight: 700;">↗</div>
+          </a>
+
+          <a href="mailto:jocelynconcordiapatubo01@gmail.com" class="contact-link-tile">
+            <div>
+              <span>Email</span>
+              <strong>jocelynconcordiapatubo01@gmail.com</strong>
+            </div>
+            <div>↗</div>
+          </a>
+
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="contact-link-tile">
+            <div>
+              <span>LinkedIn</span>
+              <strong>Profilo LinkedIn</strong>
+            </div>
+            <div>↗</div>
+          </a>
+
+          <a href="cv-jocelyn-patubo.pdf" download class="contact-link-tile">
+            <div>
+              <span>Curriculum Vitae</span>
+              <strong>Scarica il mio CV (PDF)</strong>
+            </div>
+            <div>↗</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FLOATING WHATSAPP BUBBLE -->
+<a href="https://wa.me/393000000000" target="_blank" rel="noopener noreferrer" class="whatsapp-float-bubble" aria-label="Contattami su WhatsApp">
+  <span class="whatsapp-icon-badge">WA</span>
+  <span>Scrivimi su WhatsApp</span>
+</a>
+
+<!-- 7. FOOTER -->
+<footer class="jp-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <h3>JP. — Jocelyn Patubo</h3>
+      <p>Marketing, design e comunicazione digitale. Creative thinking. Strategic impact.</p>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <a href="https://wa.me/393000000000" target="_blank" rel="noopener noreferrer" style="color: #25d366; font-size: 0.85rem; font-weight: 600;">WhatsApp ↗</a>
+      <div class="footer-copy">
+        © 2026 · Tutti i diritti riservati.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+  // Smooth Scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      gsap.to(window, {
+        duration: 0.8,
+        scrollTo: { y: targetId, offsetY: 70 },
+        ease: 'power2.inOut'
+      });
+    });
+  });
+
+  // Apple-style fade up animation on scroll
+  gsap.utils.toArray('.gsap-fade').forEach(el => {
+    gsap.from(el, {
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 88%',
+        toggleActions: 'play none none none'
+      },
+      y: 24,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    });
+  });
+
+  // Liquid Water Glass Cards Mouse Interactive Ripple & 3D Tilt Effect
+  const glassCards = document.querySelectorAll('.glass-water-card');
+
+  glassCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      // Update light refraction spot
+      card.style.setProperty('--mouse-x', `${(x / rect.width) * 100}%`);
+      card.style.setProperty('--mouse-y', `${(y / rect.height) * 100}%`);
+
+      // 3D Liquid Tilt calculation
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -8;
+      const rotateY = ((x - centerX) / centerX) * 8;
+
+      gsap.to(card, {
+        rotateX: rotateX,
+        rotateY: rotateY,
+        y: -6,
+        duration: 0.4,
+        ease: 'power2.out'
+      });
+    });
+
+    card.addEventListener('mouseleave', () => {
+      gsap.to(card, {
+        rotateX: 0,
+        rotateY: 0,
+        y: 0,
+        duration: 0.6,
+        ease: 'power3.out'
+      });
+    });
+  });
+
+  // Active navigation highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 120;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
